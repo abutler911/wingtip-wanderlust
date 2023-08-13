@@ -6,11 +6,24 @@
 
       <% blogPosts.forEach(post => { %>
       <div class="card mb-4">
-        <img
+        <div class="row">
+          <% if (post.images && post.images.length > 0) { %> <%
+          post.images.forEach(function(image) { %>
+          <div class="col-md-4">
+            <img
+              src="<%= image.replace('public\\', '/') %>"
+              alt="Post Image"
+              class="img-fluid mb-2 blog-post-image"
+            />
+          </div>
+          <% }); %> <% } %>
+        </div>
+
+        <!-- <img
           src="<%= post.images[0] %>"
           alt="Post Image"
           class="card-img-top"
-        />
+        /> -->
         <div class="card-body">
           <h5 class="card-title"><%= post.title %></h5>
           <small class="text-muted d-block">

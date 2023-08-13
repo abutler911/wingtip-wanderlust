@@ -13,12 +13,10 @@ const blogPostSchema = new Schema({
   budget: { type: String },
   activities: [String],
   accommodations: { type: String },
-  images: [
-    {
-      type: String,
-      validate: [arrayLimit, "Exceeds the limit of 10 images"],
-    },
-  ],
+  images: {
+    type: [String],
+    validate: [arrayLimit, "Exceeds the limit of 10 images"],
+  },
   author: { type: Schema.Types.ObjectId, ref: "User", required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date },

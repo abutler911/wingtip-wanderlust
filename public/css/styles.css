@@ -1,78 +1,84 @@
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .main-background {
-    background: url('https://images.unsplash.com/photo-1531902118092-4d55c50cc5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-    height: 100vh;
+  background: url("https://images.unsplash.com/photo-1531902118092-4d55c50cc5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay-text .title,
 .overlay-text .subtitle {
-    color: #fff;
-    text-align: center;
-    margin: 0;
+  color: #fff;
+  text-align: center;
+  margin: 0;
 }
 
 .overlay-text .title {
-    font-size: 4rem;
-    font-family: 'Indie Flower', cursive;
+  font-size: 4rem;
+  font-family: "Indie Flower", cursive;
 }
 
 .overlay-text .subtitle {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .button-group .btn {
-    width: 200px;
-    text-align: center;
+  width: 200px;
+  text-align: center;
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
-    transition: 0.3s;
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    border: none;
-    background: rgb(4, 88, 4);
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 0.75rem 1.5rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  background: rgb(4, 88, 4);
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.blog-post-image {
+  height: 150px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    .overlay-text .title {
-        font-size: 2rem;
-    }
+  .overlay-text .title {
+    font-size: 2rem;
+  }
 
-    .overlay-text .subtitle {
-        font-size: 1rem;
-    }
+  .overlay-text .subtitle {
+    font-size: 1rem;
+  }
 }
