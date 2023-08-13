@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
-
+const authRoutes = require("./routes/auth");
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use("/", authRoutes);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Wingtip Wanderlust | 2023" });
