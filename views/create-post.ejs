@@ -1,0 +1,111 @@
+<div class="container mt-5">
+  <h1 class="text-center">Create New Blog Post</h1>
+  <form action="/explore/create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="content">Content:</label>
+      <textarea
+        id="content"
+        name="content"
+        class="form-control"
+        rows="10"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="images">Images (up to 10):</label>
+      <input
+        type="file"
+        id="images"
+        name="images"
+        class="form-control"
+        multiple
+        accept="image/*"
+      />
+    </div>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="state">State/Region:</label>
+      <input type="text" id="state" name="state" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input
+        type="text"
+        id="country"
+        name="country"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="travelDate">Travel Date:</label>
+      <input
+        type="date"
+        id="travelDate"
+        name="travelDate"
+        class="form-control"
+      />
+    </div>
+    <!-- Highlights -->
+    <div class="form-group">
+      <label for="highlights">Highlights:</label>
+      <textarea
+        id="highlights"
+        name="highlights"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+    <!-- Rating -->
+    <div class="form-group">
+      <label for="rating">Rating (1-5):</label>
+      <input
+        type="number"
+        id="rating"
+        name="rating"
+        class="form-control"
+        min="1"
+        max="5"
+      />
+    </div>
+    <!-- Budget -->
+    <div class="form-group">
+      <label for="budget">Budget:</label>
+      <input type="text" id="budget" name="budget" class="form-control" />
+    </div>
+    <!-- Activities -->
+    <div class="form-group">
+      <label for="activities">Activities:</label>
+      <textarea
+        id="activities"
+        name="activities"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+    <!-- Accommodations -->
+    <div class="form-group">
+      <label for="accommodations">Accommodations:</label>
+      <input
+        type="text"
+        id="accommodations"
+        name="accommodations"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Publish</button>
+  </form>
+</div>

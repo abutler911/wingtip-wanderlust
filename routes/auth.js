@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const passport = require("passport");
+const { ensureAuthenticated } = require("../middlewares/authMiddleware");
 
 router.get("/register", (req, res) => {
   res.render("register", { title: "Wingtip Wanderlust | Register" });

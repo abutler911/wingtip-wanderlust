@@ -6,6 +6,7 @@ const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const passport = require("passport");
+const flash = require("connect-flash");
 
 // Import routes and database connection
 const authRoutes = require("./routes/auth");
@@ -26,6 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 // Body parser and layout configuration
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressLayouts);
+app.use(flash());
 
 // Session configuration
 app.use(
@@ -35,6 +37,11 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use((req, res, next) => {
+  res.locals.error_msg = req.flash("error_msg");
+  next();
+});
 
 // Passport initialization
 app.use(passport.initialize());
