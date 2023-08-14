@@ -20,7 +20,14 @@ router.get("/explore", ensureAuthenticated, async (req, res) => {
     const blogPosts = await BlogPost.find()
       .populate("author", "username")
       .exec();
-    res.render("explore", { title: "Wingtip Wanderlust | Explore", blogPosts });
+
+    const highlights = await BlogPost.distinct("highlights");
+
+    res.render("explore", {
+      title: "Wingtip Wanderlust | Explore",
+      blogPosts,
+      highlights,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send("Something went wrong.");

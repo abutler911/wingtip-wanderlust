@@ -11,6 +11,7 @@ const flash = require("connect-flash");
 // Import routes and database connection
 const authRoutes = require("./routes/auth");
 const exploreRoutes = require("./routes/explore");
+const highlightRoutes = require("./routes/highlightRoutes");
 const connectDB = require("./config/db");
 
 // Import Passport configuration
@@ -53,6 +54,7 @@ connectDB();
 // Routes
 app.use("/", authRoutes);
 app.use("/", exploreRoutes);
+app.use("/", highlightRoutes);
 
 // Default route
 app.get("/", (req, res) => {

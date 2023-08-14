@@ -55,21 +55,34 @@
         <h3 class="text-center">Sidebar</h3>
 
         <!-- Search Bar -->
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search" />
+        <!-- Search Bar -->
+        <form action="/search" method="get" class="input-group mb-3">
+          <input
+            type="text"
+            name="query"
+            class="form-control"
+            placeholder="Search"
+            required
+          />
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">
+            <button class="btn btn-outline-secondary" type="submit">
               Search
             </button>
           </div>
-        </div>
+        </form>
 
-        <!-- Topics -->
+        <!-- Highlights -->
         <div class="mb-3">
-          <h4>Topics</h4>
+          <h4>Highlights</h4>
           <ul>
-            <!-- Add topics -->
-            <li><a href="/topic-link">Topic 1</a></li>
+            <% highlights.forEach(highlight => { %>
+            <li>
+              <a href="/highlights/<%= highlight %>" class="highlight-link"
+                ><%= highlight.charAt(0).toUpperCase() + highlight.slice(1)
+                %></a
+              >
+            </li>
+            <% }) %>
           </ul>
         </div>
 

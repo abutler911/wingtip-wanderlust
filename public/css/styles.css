@@ -1,5 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
+  color: #000;
 }
 
 .container {
@@ -104,6 +105,21 @@ body {
   font-size: 12px;
   color: #777;
 }
+
+.highlight-link {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.highlight-link:hover {
+  font-size: 1.3rem;
+  color: green;
+}
+
 @media (max-width: 768px) {
   .overlay-text .title {
     font-size: 2rem;
