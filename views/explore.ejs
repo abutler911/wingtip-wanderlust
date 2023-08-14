@@ -1,82 +1,89 @@
-<div class="container mt-5">
-  <div class="row">
-    <!-- Main Content -->
-    <div class="col-md-8">
-      <h1 class="text-center">Recent Blog Posts</h1>
+<div class="main-background">
+  <div class="overlay"></div>
+  <div
+    class="container mt-5"
+    style="background-color: #fff; opacity: 0.7; color: #000000; padding: 20px"
+  >
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-md-8">
+        <h1 class="text-center">Recent Blog Posts</h1>
 
-      <% blogPosts.forEach(post => { %>
-      <div class="card mb-4">
-        <div class="row">
-          <% if (post.images && post.images.length > 0) { %> <%
-          post.images.forEach(function(image) { %>
-          <div class="col-md-4">
-            <img
-              src="<%= image.replace('public\\', '/') %>"
-              alt="Post Image"
-              class="img-fluid mb-2 blog-post-image"
-            />
+        <% blogPosts.forEach(post => { %>
+        <div class="card mb-4 blog-post-card">
+          <div class="row">
+            <div class="col-md-4 blog-post-image">
+              <% if (post.images && post.images.length > 0) { %>
+              <img
+                src="<%= post.images[0].replace('public\\', '/') %>"
+                alt="Post Image"
+                class="img-fluid mb-2"
+              />
+              <% } %>
+            </div>
+            <div class="col-md-8">
+              <h5 class="card-title blog-post-title"><%= post.title %></h5>
+              <small class="text-muted d-block blog-post-author">
+                By <%= post.author.username %> | Visited on: <%= new
+                Date(post.travelDate).toLocaleDateString() %> | Rating: <%=
+                post.rating %> ★
+              </small>
+              <p class="card-text mt-2">
+                <%= post.content.substring(0, 100) %>...
+              </p>
+              <a
+                href="/explore/<%= post._id %>"
+                class="btn btn-outline-success btn-block"
+                >Read More</a
+              >
+            </div>
           </div>
-          <% }); %> <% } %>
+          <div class="row blog-post-location">
+            <div class="col-md-12">
+              <small class="text-muted d-block"
+                ><%= post.city %>, <%= post.state ? post.state + ',' : '' %> <%=
+                post.country %></small
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-md-4">
+        <h3 class="text-center">Sidebar</h3>
+
+        <!-- Search Bar -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">
+              Search
+            </button>
+          </div>
         </div>
 
-        <div class="card-body">
-          <h5 class="card-title"><%= post.title %></h5>
-          <small class="text-muted d-block">
-            By <%= post.author.username %> | <%= post.city %>, <%= post.state ?
-            post.state + ',' : '' %> <%= post.country %> | Visited on: <%= new
-            Date(post.travelDate).toLocaleDateString() %> | Rating: <%=
-            post.rating %> ★
-          </small>
-          <p class="card-text mt-2"><%= post.content.substring(0, 100) %>...</p>
-          <a href="/explore/<%= post._id %>" class="btn btn-primary"
-            >Read More</a
-          >
+        <!-- Topics -->
+        <div class="mb-3">
+          <h4>Topics</h4>
+          <ul>
+            <!-- Add topics -->
+            <li><a href="/topic-link">Topic 1</a></li>
+          </ul>
         </div>
-      </div>
-      <% }) %>
 
-      <!-- Pagination -->
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Sidebar -->
-    <div class="col-md-4">
-      <h3 class="text-center">Sidebar</h3>
-
-      <!-- Search Bar -->
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search" />
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
-            Search
-          </button>
+        <!-- Archives -->
+        <div class="mb-3">
+          <h4>Archives</h4>
+          <ul>
+            <!-- Add archives -->
+            <li><a href="/archive-link">Archive 1</a></li>
+          </ul>
         </div>
-      </div>
 
-      <!-- Topics -->
-      <div class="mb-3">
-        <h4>Topics</h4>
-        <ul>
-          <!-- Add topics -->
-          <li><a href="/topic-link">Topic 1</a></li>
-        </ul>
+        <!-- Add more sidebar content as needed -->
       </div>
-
-      <!-- Archives -->
-      <div class="mb-3">
-        <h4>Archives</h4>
-        <ul>
-          <!-- Add archives -->
-          <li><a href="/archive-link">Archive 1</a></li>
-        </ul>
-      </div>
-
-      <!-- Add more sidebar content as needed -->
     </div>
   </div>
 </div>

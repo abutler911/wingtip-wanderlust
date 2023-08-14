@@ -1,11 +1,15 @@
 {
-  "name": "my-travel-blog",
+  "name": "wingtip-wanderlust-blog",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abutler911/wingtip-wanderlust.git"
   },
   "author": "Andrew Butler",
   "license": "MIT",
