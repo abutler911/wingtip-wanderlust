@@ -1,18 +1,17 @@
 <div class="main-background">
   <div class="overlay"></div>
   <div
-    class="container mt-5"
+    class="container"
     style="background-color: #fff; opacity: 0.7; color: #000000; padding: 20px"
   >
     <div class="row">
       <!-- Main Content -->
-      <div class="col-md-8">
+      <div class="col-12 col-md-8">
         <h1 class="text-center">Recent Blog Posts</h1>
-
         <% blogPosts.forEach(post => { %>
         <div class="card mb-4 blog-post-card">
           <div class="row">
-            <div class="col-md-4 blog-post-image">
+            <div class="col-12 col-md-4 blog-post-image">
               <% if (post.images && post.images.length > 0) { %>
               <img
                 src="<%= post.images[0].replace('public\\', '/') %>"
@@ -21,13 +20,13 @@
               />
               <% } %>
             </div>
-            <div class="col-md-8">
+            <div class="col-12 col-md-8">
               <h5 class="card-title blog-post-title"><%= post.title %></h5>
-              <small class="text-muted d-block blog-post-author">
-                By <%= post.author.username %> | Visited on: <%= new
+              <small class="text-muted d-block blog-post-author"
+                >By <%= post.author.username %> | Visited on: <%= new
                 Date(post.travelDate).toLocaleDateString() %> | Rating: <%=
-                post.rating %> ★
-              </small>
+                post.rating %> ★</small
+              >
               <p class="card-text mt-2">
                 <%= post.content.substring(0, 100) %>...
               </p>
@@ -39,7 +38,7 @@
             </div>
           </div>
           <div class="row blog-post-location">
-            <div class="col-md-12">
+            <div class="col-12">
               <small class="text-muted d-block"
                 ><%= post.city %>, <%= post.state ? post.state + ',' : '' %> <%=
                 post.country %></small
@@ -51,10 +50,8 @@
       </div>
 
       <!-- Sidebar -->
-      <div class="col-md-4">
+      <div class="col-12 col-md-4">
         <h3 class="text-center">Sidebar</h3>
-
-        <!-- Search Bar -->
         <!-- Search Bar -->
         <form action="/search" method="get" class="input-group mb-3">
           <input
